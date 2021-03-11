@@ -1146,8 +1146,17 @@ img {
 hr {
   margin-top: 20px;
   margin-bottom: 20px;
-  border: 0;
   border-top: 1px solid #eeeeee;
+    border-left-style: none;
+    border-left-color: inherit;
+    border-left-width: 0;
+    border-right-style: none;
+    border-right-color: inherit;
+    border-right-width: 0;
+    border-bottom-style: none;
+    border-bottom-color: inherit;
+    border-bottom-width: 0;
+    margin-left: 0px;
 }
 .sr-only {
   position: absolute;
@@ -1671,6 +1680,9 @@ pre code {
   min-height: 1px;
   padding-right: 15px;
   padding-left: 15px;
+    top: -2px;
+    left: 4px;
+    width: 1719px;
 }
 .col-xs-1,
 .col-xs-2,
