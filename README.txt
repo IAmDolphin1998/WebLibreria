@@ -9,3 +9,7 @@ Ver 1.0
   - Ricerca del prodotto
   - Registrazione
   - Login
+
+Ver 1.1
+- Aggiunta funzionalità di ricerca del prodotto (NOTA: non è ancora possibile cercare il prodotto per "Edizione", "Prezzo DA" o "Prezzo A")
+- Creata pagina Registrazione in cui è solamente possibile inserire le credenziali (DA COMPLETARE)
