@@ -13,13 +13,28 @@ namespace WebLibreria
 
         }
 
+        private int GetParametroNumerico(string parametroNumerico)
+        {
+            int risultato = 0;
+            if (parametroNumerico != "")
+            {
+                risultato = Convert.ToInt16(parametroNumerico);
+            }
+            return risultato;
+        }
+
         public List<Prodotto> Cerca()
         {
             using (AzioniCerca azioni = new AzioniCerca())
             {
-                string[] parametri = { Titolo.Text, Autore.Text, Editore.Text, 
-                                       Genere.Text, Categoria.Text, Novità.Text};
-                return azioni.CercaDatabaseProdotti(parametri);
+                int prezzoA = 1000;
+                if (PrezzoA.Text != "")
+                {
+                    prezzoA = Convert.ToInt16(PrezzoA.Text);
+                }
+                return azioni.CercaDatabaseProdotti(Titolo.Text, Autore.Text, Editore.Text, Genere.Text, 
+                                                    Categoria.Text, Novità.Text, GetParametroNumerico(Edizione.Text), 
+                                                    GetParametroNumerico(PrezzoDA.Text), prezzoA);
             }
         }
 

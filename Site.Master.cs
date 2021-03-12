@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 using WebLibreria.Logic;
 
 namespace WebLibreria
@@ -14,7 +10,7 @@ namespace WebLibreria
         {
 
         }
-
+        
         protected void Page_PreRender(object sender, EventArgs e)
         {
             using (AzioniCarrello azioni = new AzioniCarrello())

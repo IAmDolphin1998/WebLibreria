@@ -7,6 +7,24 @@
         <hr />
 
         <div>
+            <asp:Label runat="server" AssociatedControlID="Nome" CssClass="col-md-2">Nome</asp:Label>
+            <div class="col-md-10">
+                <asp:TextBox runat="server" ID="Nome" CssClass="form-control"></asp:TextBox>
+                <asp:RequiredFieldValidator runat="server" ControlToValidate="Nome" CssClass="text-danger" ErrorMessage="Il campo Nome è obbligatorio!"></asp:RequiredFieldValidator>
+            </div>
+        </div>
+
+        <div>
+            <asp:Label runat="server" AssociatedControlID="Cognome" CssClass="col-md-2">Cognome</asp:Label>
+            <div class="col-md-10">
+                <asp:TextBox runat="server" ID="Cognome" CssClass="form-control"></asp:TextBox>
+                <asp:RequiredFieldValidator runat="server" ControlToValidate="Cognome" CssClass="text-danger" ErrorMessage="Il campo Cognome è obbligatorio!"></asp:RequiredFieldValidator>
+            </div>
+        </div>
+
+        <%-- Mancano i campi Sesso, Data di nascita e Città di nascita --%>
+
+        <div>
             <asp:Label runat="server" AssociatedControlID="Email" CssClass="col-md-2">Posta elettronica</asp:Label>
             <div class="col-md-10">
                 <asp:TextBox runat="server" ID="Email" CssClass="form-control" TextMode="Email"></asp:TextBox>

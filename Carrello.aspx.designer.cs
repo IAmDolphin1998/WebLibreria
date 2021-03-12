@@ -24,6 +24,15 @@ namespace WebLibreria
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl TitoloCarrello;
 
         /// <summary>
+        /// Controllo ErrorMessage.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal ErrorMessage;
+
+        /// <summary>
         /// Controllo ListaCarrello.
         /// </summary>
         /// <remarks>
@@ -58,5 +67,14 @@ namespace WebLibreria
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Aggiorna;
+
+        /// <summary>
+        /// Controllo ConfermaAcquisto.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ConfermaAcquisto;
     }
 }

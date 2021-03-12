@@ -4,6 +4,10 @@
         <h1>Carrello</h1>
     </div>
 
+    <p class="text-danger">
+        <asp:Literal runat="server" ID="ErrorMessage"></asp:Literal>
+    </p>
+
     <asp:GridView ID="ListaCarrello" runat="server" AutoGenerateColumns="false" ItemType="WebLibreria.Models.ProdottoCarrello" SelectMethod ="GetProdottiCarrello" CssClass="table table-striped table-bordered">
        <Columns>
            <asp:BoundField DataField="Prodotto.ProdottoID" HeaderText="ID" />
@@ -36,6 +40,7 @@
         <br />
         <b>
             <asp:Button ID="Aggiorna" runat="server" Text="Aggiorna Carrello" OnClick="Aggiorna_Click" />
+            <asp:Button ID="ConfermaAcquisto" runat="server" Text="Aquista" OnClick="ConfermaAcquisto_Click" />
         </b>
     </div>
 </asp:Content>

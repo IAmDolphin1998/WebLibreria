@@ -15,6 +15,24 @@ namespace WebLibreria.Account
     {
 
         /// <summary>
+        /// Controllo Nome.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox Nome;
+
+        /// <summary>
+        /// Controllo Cognome.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox Cognome;
+
+        /// <summary>
         /// Controllo Email.
         /// </summary>
         /// <remarks>

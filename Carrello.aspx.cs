@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Web.UI;
 using System.Web.UI.WebControls;
 using WebLibreria.Logic;
 using WebLibreria.Models;
 
 namespace WebLibreria
 {
-    public partial class Carrello : System.Web.UI.Page
+    public partial class Carrello : Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -28,7 +29,7 @@ namespace WebLibreria
             }
         }
 
-        public List<ProdottoCarrello> AggiornaOggettiCarrello()
+        public void AggiornaOggettiCarrello(bool acquisto)
         {
             using (AzioniCarrello azioni = new AzioniCarrello())
             {
@@ -41,9 +42,16 @@ namespace WebLibreria
                     ValoriRiga = GetValori(ListaCarrello.Rows[i]);
                     prodottiCarrelloAggiornati[i].ProdottoID = Convert.ToInt16(ValoriRiga["Prodotto.ProdottoID"]);
 
-                    CheckBox cbRimouvi = new CheckBox();
-                    cbRimouvi = (CheckBox)ListaCarrello.Rows[i].FindControl("Rimuovi");
-                    prodottiCarrelloAggiornati[i].RimuoviProdotto = cbRimouvi.Checked;
+                    if (acquisto)
+                    {
+                        prodottiCarrelloAggiornati[i].RimuoviProdotto = true;
+                    }
+                    else
+                    {
+                        CheckBox cbRimouvi = new CheckBox();
+                        cbRimouvi = (CheckBox)ListaCarrello.Rows[i].FindControl("Rimuovi");
+                        prodottiCarrelloAggiornati[i].RimuoviProdotto = cbRimouvi.Checked;
+                    }
 
                     TextBox tbQuantità = new TextBox();
                     tbQuantità = (TextBox)ListaCarrello.Rows[i].FindControl("QuantitàProdotto");
@@ -52,7 +60,6 @@ namespace WebLibreria
                 azioni.AggiornaDatabaseProdottiCarrello(ProdottoCarrelloID, prodottiCarrelloAggiornati);
                 ListaCarrello.DataBind();
                 Totale.Text = String.Format("{0:c}", azioni.GetTotale().ToString());
-                return azioni.GetProdottiCarrello();
             }
         }
 
@@ -75,7 +82,19 @@ namespace WebLibreria
 
         protected void Aggiorna_Click(object sender, EventArgs e)
         {
-            AggiornaOggettiCarrello();
+            AggiornaOggettiCarrello(false);
+        }
+
+        protected void ConfermaAcquisto_Click(object sender, EventArgs e)
+        {
+            if (Master.ViewStateMode == ViewStateMode.Enabled)
+            {
+                AggiornaOggettiCarrello(true);
+            }
+            else
+            {
+                ErrorMessage.Text = "Ti devi registrare per completare l'ordine!";
+            }
         }
     }
 }

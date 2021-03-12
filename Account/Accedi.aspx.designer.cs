@@ -7,38 +7,29 @@
 // </generato automaticamente>
 //------------------------------------------------------------------------------
 
-namespace WebLibreria
+namespace WebLibreria.Account
 {
 
 
-    public partial class SiteMaster
+    public partial class Accedi
     {
 
         /// <summary>
-        /// Controllo NumeroProdotti.
+        /// Controllo Email.
         /// </summary>
         /// <remarks>
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor NumeroProdotti;
+        protected global::System.Web.UI.WebControls.TextBox Email;
 
         /// <summary>
-        /// Controllo LogIn.
+        /// Controllo Password.
         /// </summary>
         /// <remarks>
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LoginView LogIn;
-
-        /// <summary>
-        /// Controllo MainContent.
-        /// </summary>
-        /// <remarks>
-        /// Campo generato automaticamente.
-        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContent;
+        protected global::System.Web.UI.WebControls.TextBox Password;
     }
 }
