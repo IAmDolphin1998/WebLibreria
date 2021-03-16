@@ -13,3 +13,9 @@ Ver 1.0
 Ver 1.1
 - Aggiunta funzionalità di ricerca del prodotto (NOTA: non è ancora possibile cercare il prodotto per "Edizione", "Prezzo DA" o "Prezzo A")
 - Creata pagina Registrazione in cui è solamente possibile inserire le credenziali (DA COMPLETARE)
+
+Ver 1.2
+- Migliorata la funzionalità di ricerca del prodotto
+- Migliorata la funzionalità di carrello (Ora è possibile simulare l'acquisto dell'ordine cliccando un apposito pulsante)
+- Migliorata la pagina Registrazione con nuovi campi d'inserimento
+- Creata pagina Login in cui è solamente possibile inserire le credenziali (DA COMPLETARE)
