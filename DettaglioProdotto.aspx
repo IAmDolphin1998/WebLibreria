@@ -8,7 +8,7 @@
             <br />
             <table>
                 <td>
-                    <img src="Immagini/<%#: Item.ImmaginePercorso %>" width="200" height="295"/>
+                    <img src="Immagini/<%#: Item.ImmaginePercorso %>" width="200" height="295" style="padding-right:10px"/>
                 </td>
                 <td>
                         <b>Descrizione: </b><%#: Item.Descrizione %>

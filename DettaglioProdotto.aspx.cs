@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Linq;
 using System.Web.ModelBinding;
+using System.Web.UI;
 using WebLibreria.Models;
 
 namespace WebLibreria
 {
-    public partial class DettaglioProdotto : System.Web.UI.Page
+    public partial class DettaglioProdotto : Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

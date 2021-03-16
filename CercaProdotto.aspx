@@ -15,7 +15,8 @@
                 <asp:TextBox runat="server" ID="Titolo" CssClass="form-control"></asp:TextBox>
             </div>
            </div>
-            
+           
+           <br />
            <br />
 
            <div>
@@ -27,6 +28,7 @@
             </div>
         </div>
 
+            
            <br />
 
            <div>
@@ -39,6 +41,7 @@
             </div>
         </div>
 
+         
            <br />
 
            <div>

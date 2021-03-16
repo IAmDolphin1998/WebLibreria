@@ -26,7 +26,7 @@
                        <table>
                            <td>
                                <a href="DettaglioProdotto.aspx?ProdottoID=<%#: Item.ProdottoID %>">
-                                       <img src="Immagini/<%#: Item.ImmaginePercorso %>" width="200" height="295"/>
+                                       <img src="Immagini/<%#: Item.ImmaginePercorso %>" width="200" height="295" style="padding-right: 10px;"/>
                                </a>
                            </td>
                            <td>

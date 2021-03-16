@@ -15,7 +15,7 @@ namespace WebLibreria.Logic
             return (from c in _db.Prodotti
                     where (c.Titolo == titolo || c.Autore == autore || c.Editore == editore ||
                            c.Genere == genere || c.Categoria == categoria || c.Novità == novità ||
-                           c.Edizione == edizione) || (c.Prezzo >= prezzoDA && c.Prezzo <= prezzoA)
+                           c.Edizione == edizione) && (c.Prezzo >= prezzoDA && c.Prezzo <= prezzoA)
                     select c).ToList(); 
         }
 

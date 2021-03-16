@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Web.UI;
+using System.Web.Security;
 using WebLibreria.Logic;
 
 namespace WebLibreria
@@ -19,5 +20,12 @@ namespace WebLibreria
                 NumeroProdotti.InnerText = contatore;
             }
         }
+
+        protected void Esci_Click(object sender, EventArgs e)
+        {
+            FormsAuthentication.SignOut();
+            FormsAuthentication.RedirectToLoginPage();
+        }
+       
     }
 }

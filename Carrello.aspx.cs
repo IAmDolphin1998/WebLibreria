@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using WebLibreria.Logic;
@@ -87,13 +88,13 @@ namespace WebLibreria
 
         protected void ConfermaAcquisto_Click(object sender, EventArgs e)
         {
-            if (Master.ViewStateMode == ViewStateMode.Enabled)
+            if (Page.User.Identity.IsAuthenticated)
             {
                 AggiornaOggettiCarrello(true);
             }
             else
             {
-                ErrorMessage.Text = "Ti devi registrare per completare l'ordine!";
+                FormsAuthentication.RedirectToLoginPage();
             }
         }
     }
