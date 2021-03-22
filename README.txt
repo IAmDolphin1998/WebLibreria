@@ -24,3 +24,7 @@ Ver 1.3
 - Aggiunta funzionalità di Registrazione e Login, è ora possibile accedere al sito con le credenziali d'accesso.
 - Aggiunta funzionalità di Visualizzazione del Profilo (SOLO se si è loggati)
     NOTA: Deve essere aggiunta la possibilità di visualizzare lo storico dei ordini
+
+Ver 1.4
+- Aggiunta funzionalità dello storico ordini
+    NOTA: Deve essere aggiuta la possibilità di filtrazione dello storico ordini
