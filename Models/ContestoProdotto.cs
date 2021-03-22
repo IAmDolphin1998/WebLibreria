@@ -10,5 +10,6 @@ namespace WebLibreria.Models
         public DbSet<Prodotto> Prodotti { get; set; }
         public DbSet<ProdottoCarrello> ProdottiCarrello { get; set; }
         public DbSet<Utente> UtentiRegistrati { get; set; }
+        public DbSet<Ordine> Ordini { get; set; }
     } 
 }

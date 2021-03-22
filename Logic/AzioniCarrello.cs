@@ -26,8 +26,7 @@ namespace WebLibreria.Logic
                     ProdottoCarrelloID = Guid.NewGuid().ToString(),
                     CarrelloID = ProdottoCarrelloID,
                     Prodotto = _db.Prodotti.SingleOrDefault(p => p.ProdottoID == id),
-                    Quantità = 1,
-                    DataOrdine = DateTime.Now
+                    Quantità = 1
                 };
                 _db.ProdottiCarrello.Add(carrello);
             }

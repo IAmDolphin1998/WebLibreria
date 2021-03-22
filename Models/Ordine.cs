@@ -6,13 +6,19 @@ namespace WebLibreria.Models
 {
     public class Ordine
     {
-        [Required]
-        public List<ProdottoCarrello> prodottiOrdinati { get; set; }
+        [Key]
+        public string OrdineID { get; set; }
 
         [Required]
-        public DateTime dataOrdine { get; set; }
+        public string Utente_Email { get; set; }
 
         [Required]
-        public int prezzoOrdine { get; set; }
+        public DateTime DataOrdine { get; set; }
+
+        [Required]
+        public string PrezzoOrdine { get; set; }
+
+        [Required]
+        public ICollection<int> ProdottiOrdinati { get; set; }
     }
 }

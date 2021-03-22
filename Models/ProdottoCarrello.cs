@@ -1,5 +1,4 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace WebLibreria.Models
 {
@@ -8,12 +7,13 @@ namespace WebLibreria.Models
         [Key]
         public string ProdottoCarrelloID { get; set; }
 
+        [Required]
         public string CarrelloID { get; set; }
 
+        [Required]
         public int Quantità { get; set; }
 
-        public DateTime DataOrdine { get; set; }
-
+        [Required]
         public virtual Prodotto Prodotto { get; set; }
     }
 }

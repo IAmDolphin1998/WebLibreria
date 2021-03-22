@@ -8,46 +8,46 @@ namespace WebLibreria.Models
         [ScaffoldColumn(false)]
         public int ProdottoID { get; set; }
 
-        [Required, StringLength(100), Display(Name = "Titolo")]
+        [Required]
         public string Titolo { get; set; }
 
-        [Required, StringLength(1000), Display(Name = "Descrizione prodotto")]
+        [Required]
         public string Descrizione { get; set; }
 
-        [Required, StringLength(13), Display(Name = "ISBN")]
+        [Required, StringLength(13)]
         public string ISBN { get; set; }
 
         [Required]
         public string ImmaginePercorso { get; set; }
 
-        [Required, Display(Name = "Autore")]
+        [Required]
         public string Autore { get; set; }
 
-        [Required, Display(Name = "Editore")]
+        [Required]
         public string Editore { get; set; }
 
-        [Required, Display(Name = "Genere")]
+        [Required]
         public string Genere { get; set; }
 
-        [Required, Display(Name = "Categoria")]
+        [Required]
         public string Categoria { get; set; }
 
-        [Required, Display(Name = "Edizione")]
+        [Required]
         public int Edizione { get; set; }
 
-        [Required, Display(Name = "Numero di pagine")]
+        [Required]
         public int NumeroPagine { get; set; }
 
-        [Required, Display(Name = "Prezzo")]
+        [Required]
         public double Prezzo { get; set; }
 
         [Required]
         public bool Disponibilità { get; set; }
 
-        [Required, Display(Name = "Data di pubblicazione")]
+        [Required]
         public DateTime DataInserimento { get; set; }
 
-        [Required, Display(Name = "Novità")]
+        [Required]
         public string Novità { get; set; }
     }
 }

@@ -5,23 +5,22 @@ namespace WebLibreria.Models
 {
     public class Utente
     {
-     
-        [Required, Display(Name = "Nome")]
+        [Required]
         public string Nome { get; set; }
 
-        [Required, Display(Name = "Cognome")]
+        [Required]
         public string Cognome { get; set; }
 
         [Required]
         public string SessoUtente { get; set; }
 
-        [Required, Display(Name = "Data di nascita")]
+        [Required]
         public DateTime DataNascita { get; set; }
 
-        [Required, Display(Name = "Città di nascita")]
+        [Required]
         public string CittàNascita { get; set; }
 
-        [Key, Display(Name = "Email")]
+        [Key]
         public string Email { get; set; }
 
         [Required]

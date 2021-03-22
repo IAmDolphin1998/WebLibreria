@@ -21,7 +21,7 @@ namespace WebLibreria.Models
                     Titolo = "Il sistema. Potere, politica affari: storia segreta della magistratura italiana",
                     Descrizione = "Incalzato dalle domande di Alessandro Sallusti, in questo libro Palamara racconta cosa sia il “Sistema” che ha pesantemente influenzato la politica italiana.",
                     ISBN = "9788817157162",
-                    ImmaginePercorso = "sistema.png",
+                    ImmaginePercorso = "sistema.jpg",
                     Autore = "Alessandro Sallusti",
                     Editore = "Rizzoli",
                     Genere = "Diritto",

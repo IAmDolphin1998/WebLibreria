@@ -20,4 +20,42 @@
             </td>
         </ItemTemplate>
     </asp:FormView>
+
+    <h2>Storico Ordini</h2>
+
+    <asp:ListView ID="StoricoDeiOrdini" runat="server" ItemType="WebLibreria.Models.Ordine" SelectMethod="GetOrdiniUtente">
+        <EmptyDataTemplate>
+            <td>Nessun Ordine Effettuato!</td>
+        </EmptyDataTemplate>
+        <EmptyItemTemplate>
+            <td></td>
+        </EmptyItemTemplate>
+        <ItemTemplate>
+            <div>
+                <td>
+                    <b>ID Ordine: </b><%#: Item.OrdineID %>
+                </td>
+                <td>
+                    <b>Ordine Effettuato il: </b><%#: Item.DataOrdine %>
+                </td>
+                <td>
+                    <b>Totale Ordine: </b><%#: Item.PrezzoOrdine %>
+                </td>
+            </div>
+            <%--<asp:ListView ID="ProdottiOrdinati" runat="server" ItemType="WebLibreria.Models.Prodotto" SelectMethod="ProdottiOrdinati_GetData">
+                <ItemTemplate>
+                    <div>
+                        <td>
+                            <img src="Immagini/<%#: Item.ImmaginePercorso %>" width="150" height="280" style="padding-right: 10px;"/>
+                        </td>
+                        <td>
+
+                        </td>
+                    </div>
+                </ItemTemplate>
+            </asp:ListView>--%>
+            <br />
+        </ItemTemplate>
+    </asp:ListView>
+
 </asp:Content>

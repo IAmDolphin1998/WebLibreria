@@ -22,10 +22,15 @@ namespace WebLibreria.Logic
                     CittàNascita = cittàNascita,
                     Email = email,
                     Password = password
-
                 };
                 _db.UtentiRegistrati.Add(utente);
             }
+            _db.SaveChanges();
+        }
+
+        public void AggiungiOrdine(Ordine ordine) 
+        { 
+            _db.Ordini.Add(ordine);
             _db.SaveChanges();
         }
 

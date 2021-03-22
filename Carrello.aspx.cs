@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Linq;
+using System.Web;
 using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -30,6 +32,28 @@ namespace WebLibreria
             }
         }
 
+        public void CreaOrdine()
+        {
+            using (ContestoProdotto _db = new ContestoProdotto())
+            {
+                using (AzioniCarrello azioni = new AzioniCarrello())
+                {
+                    var ordine = new Ordine
+                    {
+                        Utente_Email = HttpContext.Current.User.Identity.Name,
+                        ProdottiOrdinati = _db.ProdottiCarrello.Where(p => p.CarrelloID == HttpContext.Current.User.Identity.Name).Select(p => p.Prodotto.ProdottoID).ToList(),
+                        OrdineID = Guid.NewGuid().ToString(),
+                        DataOrdine = DateTime.Now,
+                        PrezzoOrdine = Totale.Text
+                    };
+                    using (AzioniUtente azioniUtente = new AzioniUtente())
+                    {
+                        azioniUtente.AggiungiOrdine(ordine);
+                    }
+                }
+            }
+        }
+
         public void AggiornaOggettiCarrello(bool acquisto)
         {
             using (AzioniCarrello azioni = new AzioniCarrello())
@@ -39,8 +63,8 @@ namespace WebLibreria
                 AzioniCarrello.ProdottoCarrelloAggiornato[] prodottiCarrelloAggiornati = new AzioniCarrello.ProdottoCarrelloAggiornato[ListaCarrello.Rows.Count];
                 for (int i = 0; i < ListaCarrello.Rows.Count; i++)
                 {
-                    IOrderedDictionary ValoriRiga = new OrderedDictionary();
-                    ValoriRiga = GetValori(ListaCarrello.Rows[i]);
+                    _ = new OrderedDictionary();
+                    IOrderedDictionary ValoriRiga = GetValori(ListaCarrello.Rows[i]);
                     prodottiCarrelloAggiornati[i].ProdottoID = Convert.ToInt16(ValoriRiga["Prodotto.ProdottoID"]);
 
                     if (acquisto)
@@ -49,13 +73,13 @@ namespace WebLibreria
                     }
                     else
                     {
-                        CheckBox cbRimouvi = new CheckBox();
-                        cbRimouvi = (CheckBox)ListaCarrello.Rows[i].FindControl("Rimuovi");
+                        _ = new CheckBox();
+                        CheckBox cbRimouvi = (CheckBox)ListaCarrello.Rows[i].FindControl("Rimuovi");
                         prodottiCarrelloAggiornati[i].RimuoviProdotto = cbRimouvi.Checked;
                     }
 
-                    TextBox tbQuantità = new TextBox();
-                    tbQuantità = (TextBox)ListaCarrello.Rows[i].FindControl("QuantitàProdotto");
+                    _ = new TextBox();
+                    TextBox tbQuantità = (TextBox)ListaCarrello.Rows[i].FindControl("QuantitàProdotto");
                     prodottiCarrelloAggiornati[i].Quantità = Convert.ToInt16(tbQuantità.Text.ToString());
                 }
                 azioni.AggiornaDatabaseProdottiCarrello(ProdottoCarrelloID, prodottiCarrelloAggiornati);
@@ -90,6 +114,7 @@ namespace WebLibreria
         {
             if (Page.User.Identity.IsAuthenticated)
             {
+                CreaOrdine();
                 AggiornaOggettiCarrello(true);
             }
             else

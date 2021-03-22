@@ -4,6 +4,7 @@ using WebLibreria.Models;
 using System.Linq;
 using System.Web;
 using System.Web.Security;
+using System.Collections.Generic;
 
 namespace WebLibreria.Account
 {
@@ -29,5 +30,12 @@ namespace WebLibreria.Account
                 }       
             }
         }
+
+        public IQueryable<Ordine> GetOrdiniUtente() => new ContestoProdotto().Ordini.Where(o => o.Utente_Email == HttpContext.Current.User.Identity.Name);
+
+        //public IQueryable<Prodotto> ProdottiOrdinati_GetData()
+        //{
+        //    return null;
+        //}
     }
 }
