@@ -28,3 +28,6 @@ Ver 1.3
 Ver 1.4
 - Aggiunta funzionalità dello storico ordini
     NOTA: Deve essere aggiuta la possibilità di filtrazione dello storico ordini
+
+Ver 1.5
+- Aggiunta la possibilità di filtrazione dello storico ordini sul proprio profilo personale
