@@ -16,7 +16,7 @@ namespace WebLibreria.Models
         public DateTime DataOrdine { get; set; }
 
         [Required]
-        public string PrezzoOrdine { get; set; }
+        public double PrezzoOrdine { get; set; }
 
         [Required]
         public ICollection<int> ProdottiOrdinati { get; set; }

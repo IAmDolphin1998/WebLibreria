@@ -24,6 +24,24 @@ namespace WebLibreria.Account
         protected global::System.Web.UI.WebControls.FormView InformazioniUtente;
 
         /// <summary>
+        /// Controllo SceltaFasciaPrezzo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList SceltaFasciaPrezzo;
+
+        /// <summary>
+        /// Controllo SceltaMesi.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList SceltaMesi;
+
+        /// <summary>
         /// Controllo StoricoDeiOrdini.
         /// </summary>
         /// <remarks>

@@ -23,6 +23,23 @@
 
     <h2>Storico Ordini</h2>
 
+    <div>
+        <asp:DropDownList runat="server" ID="SceltaFasciaPrezzo">
+            <asp:ListItem Value="0-1000000" Selected="True">-- Seleziona una opzione --</asp:ListItem>
+            <asp:ListItem>0-10</asp:ListItem>
+            <asp:ListItem>10-50</asp:ListItem>
+            <asp:ListItem>50-100</asp:ListItem>
+        </asp:DropDownList>
+        <asp:DropDownList runat="server" ID="SceltaMesi">
+            <asp:ListItem Selected="True" Value="100">-- Seleziona una opzione --</asp:ListItem>
+            <asp:ListItem Value="3">Ordini degli ultimi 3 mesi</asp:ListItem>
+            <asp:ListItem Value="6">Ordini degli ultimi 6 mesi</asp:ListItem>
+        </asp:DropDownList>
+        <asp:Button runat="server" OnClick="Filtra_Click" Text="Filtra"/>
+    </div>
+
+    <p></p>
+
     <asp:ListView ID="StoricoDeiOrdini" runat="server" ItemType="WebLibreria.Models.Ordine" SelectMethod="GetOrdiniUtente">
         <EmptyDataTemplate>
             <td>Nessun Ordine Effettuato!</td>
@@ -39,21 +56,9 @@
                     <b>Ordine Effettuato il: </b><%#: Item.DataOrdine %>
                 </td>
                 <td>
-                    <b>Totale Ordine: </b><%#: Item.PrezzoOrdine %>
+                    <b>Totale Ordine: </b><%#: String.Format("{0:c}", Item.PrezzoOrdine) %>
                 </td>
             </div>
-            <%--<asp:ListView ID="ProdottiOrdinati" runat="server" ItemType="WebLibreria.Models.Prodotto" SelectMethod="ProdottiOrdinati_GetData">
-                <ItemTemplate>
-                    <div>
-                        <td>
-                            <img src="Immagini/<%#: Item.ImmaginePercorso %>" width="150" height="280" style="padding-right: 10px;"/>
-                        </td>
-                        <td>
-
-                        </td>
-                    </div>
-                </ItemTemplate>
-            </asp:ListView>--%>
             <br />
         </ItemTemplate>
     </asp:ListView>

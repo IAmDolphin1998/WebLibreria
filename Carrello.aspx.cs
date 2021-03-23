@@ -44,7 +44,7 @@ namespace WebLibreria
                         ProdottiOrdinati = _db.ProdottiCarrello.Where(p => p.CarrelloID == HttpContext.Current.User.Identity.Name).Select(p => p.Prodotto.ProdottoID).ToList(),
                         OrdineID = Guid.NewGuid().ToString(),
                         DataOrdine = DateTime.Now,
-                        PrezzoOrdine = Totale.Text
+                        PrezzoOrdine = Convert.ToDouble(Totale.Text.Split(' ')[0])
                     };
                     using (AzioniUtente azioniUtente = new AzioniUtente())
                     {
